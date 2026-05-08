@@ -1,0 +1,35 @@
+LEARNING PATH — study these alongside building
+
+Week 1 (Auth + Multi-tenancy)
+  - JWT deep dive: https://jwt.io/introduction
+  - Spring Security architecture: https://docs.spring.io/spring-security/reference/servlet/architecture.html
+  - BCrypt password hashing — why it's slow by design
+  - ThreadLocal in Java — what it is and why it's used for request-scoped context
+  - Flyway database migrations — why versioned migrations beat auto-ddl
+
+Week 2 (Ingestion + Embeddings)
+  - OpenAPI 3.0 specification — understand the structure you're parsing
+  - What are vector embeddings? — https://platform.openai.com/docs/guides/embeddings
+  - Cosine similarity vs dot product — which Pinecone uses and why
+  - Spring @Async — how it works, thread pool configuration, exception handling
+  - AWS S3 concepts — buckets, keys, presigned URLs, IAM permissions
+
+Week 3 (Agentic RAG)
+  - RAG fundamentals: https://docs.llamaindex.ai/en/stable/getting_started/concepts/
+  - OpenAI function calling / tool use: https://platform.openai.com/docs/guides/function-calling
+  - LangChain4j tools documentation: https://docs.langchain4j.dev/tutorials/tools
+  - Server-Sent Events (SSE) — how streaming HTTP works
+  - Redis data types — String, List, Hash, Sorted Set — when to use each
+
+Week 4 (Production + Deploy)
+  - Docker multi-stage builds — why they produce smaller images
+  - Nginx as reverse proxy — upstream, proxy_pass, location blocks
+  - GitHub Actions workflow syntax — jobs, steps, secrets, environments
+  - Prometheus data model — counters, gauges, histograms, labels
+  - AWS IAM least-privilege principle — why your EC2 needs minimal permissions
+
+Ongoing
+  - System Design Interview Vol 1 — Alex Xu (read chapters on URL shortener, rate limiter, consistent hashing)
+  - Designing Data-Intensive Applications — Martin Kleppmann (chapters 1-4 for now)
+  - Spring Boot in Action — Craig Walls (skim for patterns you're using)
+  - OpenAI cookbook on GitHub — real examples of RAG, tool calling, streaming

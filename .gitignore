@@ -1,0 +1,34 @@
+# ── Secrets — NEVER commit these ──────────────────────────────────────────────
+application-local.properties
+application-prod.properties
+*.env
+.env
+.env.local
+.env.production
+secrets/
+
+# ── Java / Maven ───────────────────────────────────────────────────────────────
+target/
+*.class
+*.jar
+*.war
+.mvn/wrapper/maven-wrapper.jar
+
+# ── Node / Next.js ─────────────────────────────────────────────────────────────
+node_modules/
+.next/
+out/
+npm-debug.log*
+
+# ── IDEs ───────────────────────────────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+docker-compose.override.yml
