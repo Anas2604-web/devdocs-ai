@@ -2,7 +2,6 @@
 # Copy this to application-local.properties and fill in your values
 
 
-server.port=9090
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/devdocsai
 spring.datasource.username=postgres
