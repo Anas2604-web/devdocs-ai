@@ -24,35 +24,31 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     }
 
     @Override
+    protected boolean shouldNotFilterAsyncDispatch() {
+        return false;
+    }
+
+    @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain)
             throws ServletException, IOException {
         try {
             String token = extractToken(request);
-
             if (token != null && jwtService.validateToken(token)) {
                 String userId   = jwtService.extractUserId(token);
                 String tenantId = jwtService.extractTenantId(token);
                 String role     = jwtService.extractRole(token);
-
-                // Set tenant context for this request thread
                 TenantContext.setCurrentTenant(tenantId);
-
-                // Set Spring Security context
                 var auth = new UsernamePasswordAuthenticationToken(
                         userId, null,
                         List.of(new SimpleGrantedAuthority("ROLE_" + role))
                 );
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
-
             filterChain.doFilter(request, response);
-
         } finally {
-            // Always clear — critical for ThreadLocal cleanup
             TenantContext.clear();
-            SecurityContextHolder.clearContext();
         }
     }
 
